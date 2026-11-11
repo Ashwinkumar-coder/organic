@@ -47,7 +47,7 @@ button {
   font-family: inherit;
 }
 
-/* Page container width increased to 1420px for high-end wide desktop presentation */
+/* Page container width increased to 1420px */
 .wrap {
   width: 100%;
   max-width: var(--max-width);
@@ -58,7 +58,7 @@ button {
 }
 
 /* ==========================================================================
-   Header: Modern Glassmorphic Island
+   Header: Glassmorphic Floating Island
    ========================================================================== */
 header {
   position: sticky;
@@ -73,10 +73,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid var(--line);
   border-radius: 999px;
   padding: 8px 12px 8px 24px;
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
@@ -211,18 +211,49 @@ header {
 }
 
 /* ==========================================================================
-   Hero: Modern Split Architecture
+   Hero: Bento Grid Architecture
    ========================================================================== */
-.hero-split {
+.hero-bento {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: clamp(36px, 5vw, 68px);
-  align-items: center;
-  padding: clamp(48px, 6vw, 76px) clamp(20px, 4vw, 48px) 36px;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  padding: clamp(48px, 6vw, 76px) 0 36px;
+}
+
+.hero-card-main {
+  background: var(--soft);
+  border: 1.5px solid var(--line);
+  border-radius: 36px;
+  padding: clamp(36px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 16px 36px -16px rgba(0, 0, 0, 0.06);
+}
+
+.hero-card-visual {
+  background: var(--soft);
+  border: 1.5px solid var(--line);
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
+  min-height: 420px;
+  box-shadow: 0 24px 50px -20px rgba(11, 61, 38, 0.18);
+  perspective: 1000px;
+}
+
+.hero-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 h1 {
-  font-size: clamp(46px, 6.2vw, 86px);
+  font-size: clamp(44px, 5.8vw, 84px);
   line-height: 1.02;
   letter-spacing: -0.04em;
   font-weight: 600;
@@ -259,48 +290,23 @@ h1 {
   margin-top: 32px;
 }
 
-/* Visual Stage on Right */
-.stage-split {
-  position: relative;
-  perspective: 1100px;
-}
-
-.tilt {
-  border-radius: 36px;
-  overflow: hidden;
-  aspect-ratio: 16 / 11;
-  min-height: 360px;
-  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-  border: 1.5px solid var(--line);
-  box-shadow: 0 28px 56px -22px rgba(11, 61, 38, 0.22);
-  background: var(--soft);
-}
-
-.tilt img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  display: block;
-}
-
-/* Modern Floating Badges */
+/* Floating Badges inside Hero Visual */
 .sticker {
   z-index: 10;
   position: absolute;
-  right: 4%;
-  top: -24px;
-  background: #ffffff;
+  right: 20px;
+  top: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
   border: 1.5px solid var(--ink);
-  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.22);
   border-radius: 999px;
-  padding: 11px 22px 11px 16px;
+  padding: 10px 20px 10px 14px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--ink);
   animation: flt 6s ease-in-out infinite;
 }
@@ -316,10 +322,10 @@ h1 {
 }
 
 .sticker2 {
-  left: 4%;
+  left: 20px;
   right: auto;
   top: auto;
-  bottom: -22px;
+  bottom: 20px;
   background: var(--lime);
   border-color: var(--ink);
   box-shadow: 0 16px 36px -12px rgba(11, 61, 38, 0.28);
@@ -341,14 +347,14 @@ h1 {
 }
 
 /* ==========================================================================
-   Marquee
+   Marquee: High-Contrast Luxury Ribbon
    ========================================================================== */
 .mq {
   overflow: hidden;
-  border-block: 1px solid var(--line);
+  background: var(--ink);
+  color: #ffffff;
   margin: clamp(48px, 6vw, 70px) 0 0;
-  padding: 16px 0;
-  background: #ffffff;
+  padding: 20px 0;
   user-select: none;
 }
 
@@ -363,16 +369,18 @@ h1 {
 }
 
 .mq span {
-  font-size: clamp(18px, 2.3vw, 27px);
+  font-size: clamp(19px, 2.4vw, 28px);
   font-weight: 500;
-  letter-spacing: -0.03em;
-  padding: 0 26px;
+  letter-spacing: -0.02em;
+  padding: 0 28px;
   white-space: nowrap;
+  color: #ffffff;
 }
 
 .mq span:nth-child(even) {
-  color: var(--green);
+  color: var(--lime);
   font-style: italic;
+  font-weight: 600;
 }
 
 @keyframes mq {
@@ -406,24 +414,24 @@ h2 {
 }
 
 /* ==========================================================================
-   Catalog (What We Do)
+   Catalog (What We Do): Modern Cards
    ========================================================================== */
 .seg {
   display: inline-flex;
   background: var(--accent-soft);
   border-radius: 999px;
-  padding: 5px;
+  padding: 6px;
   margin-top: 34px;
   border: 1px solid var(--line);
-  gap: 4px;
+  gap: 6px;
 }
 
 .seg button {
   border: 0;
   background: transparent;
-  padding: 10px 24px;
+  padding: 10px 26px;
   border-radius: 999px;
-  font: 500 14px 'Poppins', sans-serif;
+  font: 500 14.5px 'Poppins', sans-serif;
   cursor: pointer;
   color: var(--mut);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -436,7 +444,6 @@ h2 {
   font-weight: 600;
 }
 
-/* 4-column wide grid for expanded page width */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -445,8 +452,8 @@ h2 {
 }
 
 .card {
-  border: 1px solid var(--line);
-  border-radius: 26px;
+  border: 1.5px solid var(--line);
+  border-radius: 28px;
   padding: 16px;
   cursor: pointer;
   background: #ffffff;
@@ -458,7 +465,7 @@ h2 {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 24px 44px -20px rgba(11, 61, 38, 0.22);
   border-color: #cfd3c6;
 }
@@ -466,7 +473,7 @@ h2 {
 .card img, .card .ph {
   width: 100%;
   aspect-ratio: 4 / 3;
-  border-radius: 18px;
+  border-radius: 20px;
   object-fit: cover;
   display: block;
   transition: transform 0.35s ease;
@@ -508,7 +515,7 @@ h2 {
 }
 
 .card h3 {
-  font-size: 18.5px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin: 16px 4px 4px;
@@ -575,7 +582,7 @@ h2 {
 }
 
 /* ==========================================================================
-   Stats: Modern Metric Cards
+   Stats: 3 Modern Metric Bento Cards
    ========================================================================== */
 .stats {
   display: grid;
@@ -587,9 +594,9 @@ h2 {
 
 .stat {
   background: var(--soft);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 36px 32px;
+  border: 1.5px solid var(--line);
+  border-radius: 30px;
+  padding: 38px 32px;
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -665,9 +672,9 @@ h2 {
 
 .val div {
   background: var(--soft);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 20px 22px;
+  border: 1.5px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 24px;
   font-weight: 600;
   letter-spacing: -0.02em;
   font-size: 17px;
@@ -811,9 +818,9 @@ footer .wrap:last-child {
    Responsive Adaptations
    ========================================================================== */
 @media (max-width: 960px) {
-  .hero-split {
+  .hero-bento {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
   }
   .sticker {
     position: static;

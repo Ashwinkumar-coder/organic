@@ -24,19 +24,19 @@ export default function Hero() {
     const rect = tiltRef.current.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    tiltRef.current.style.transform = `perspective(1000px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+    tiltRef.current.style.transform = `scale(1.02) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
   };
 
   const handlePointerLeave = () => {
     if (!tiltRef.current) return;
-    tiltRef.current.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+    tiltRef.current.style.transform = 'scale(1) rotateY(0deg) rotateX(0deg)';
   };
 
   return (
     <div className="wrap">
-      <div className="hero-split">
-        {/* Left Column: Typography & CTAs */}
-        <div>
+      <div className="hero-bento">
+        {/* Main Bento Card: Headline & Value Proposition */}
+        <div className="hero-card-main">
           <span className="chip">Organic · Smart · Sustainable</span>
           <h1>
             Organic roots.
@@ -57,14 +57,18 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Column: 3D Visual Stage with Floating Badges */}
+        {/* Visual Bento Card: Interactive 3D Stage with Floating Badges */}
         <div
-          className="stage-split"
+          className="hero-card-visual"
           onPointerMove={handlePointerMove}
           onPointerLeave={handlePointerLeave}
         >
           <div className="sticker">ICAR-certified microchips</div>
-          <div className="tilt" id="tilt" ref={tiltRef}>
+          <div
+            id="tilt"
+            ref={tiltRef}
+            style={{ width: '100%', height: '100%', transition: 'transform 0.18s cubic-bezier(0.16, 1, 0.3, 1)' }}
+          >
             <img src="/images/hero-farmers.jpg" alt="Women farmers of Manipur in a turmeric field" />
           </div>
           <div className="sticker sticker2">RF ear tags</div>
