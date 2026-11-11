@@ -10,9 +10,9 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div id="top" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <>
       <Header />
-      <main style={{ flexGrow: 1 }}>
+      <main id="top">
         <Hero />
         <Marquee />
         <Catalog />
@@ -21,7 +21,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
-
