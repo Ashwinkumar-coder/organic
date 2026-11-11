@@ -56,7 +56,7 @@ export default function Contact() {
             Bulk, private label, samples or custom tech. Tell us what you need and we’ll get back with availability and pricing.
           </p>
 
-          <p style={{ marginTop: '26px' }}>
+          <p style={{ marginTop: '28px' }}>
             <b>Email</b>
             <br />
             <a href="mailto:info@indiorg.org">info@indiorg.org</a>
@@ -77,62 +77,64 @@ export default function Contact() {
           </p>
         </div>
 
-        <form id="f" onSubmit={handleSubmit}>
-          <div className="tags" id="tags">
-            {TAGS.map((tag) => {
-              const isOn = activeTags.includes(tag);
-              return (
-                <span
-                  key={tag}
-                  className={`tg ${isOn ? 'on' : ''}`}
-                  onClick={() => toggleTag(tag)}
-                >
-                  {tag}
-                </span>
-              );
-            })}
-          </div>
+        <div className="contact-container">
+          <form id="f" onSubmit={handleSubmit}>
+            <div className="tags" id="tags">
+              {TAGS.map((tag) => {
+                const isOn = activeTags.includes(tag);
+                return (
+                  <span
+                    key={tag}
+                    className={`tg ${isOn ? 'on' : ''}`}
+                    onClick={() => toggleTag(tag)}
+                  >
+                    {tag}
+                  </span>
+                );
+              })}
+            </div>
 
-          <input
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your name"
-            required
-          />
+            <input
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your name"
+              required
+            />
 
-          <input
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            required
-          />
+            <input
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              required
+            />
 
-          <input
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            placeholder="Company and country"
-          />
+            <input
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              placeholder="Company and country"
+            />
 
-          <textarea
-            name="msg"
-            rows="4"
-            value={formData.msg}
-            onChange={handleChange}
-            placeholder="Volumes, packaging, destination market…"
-          />
+            <textarea
+              name="msg"
+              rows={4}
+              value={formData.msg}
+              onChange={handleChange}
+              placeholder="Volumes, packaging, destination market…"
+            />
 
-          <button
-            className="btn lime"
-            type="submit"
-            style={{ justifyContent: 'center', padding: '16px' }}
-          >
-            Send it →
-          </button>
-        </form>
+            <button
+              className="btn lime"
+              type="submit"
+              style={{ justifyContent: 'center', padding: '16px', width: '100%' }}
+            >
+              Send it →
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
