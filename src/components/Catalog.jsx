@@ -49,8 +49,8 @@ const CARDS = [
   {
     id: 'animal-id',
     type: 't',
-    theme: 'theme-lime', // Lime card from Figma!
-    icon: <Cpu size={36} strokeWidth={1.8} />,
+    theme: 'theme-lime', // Lime card from Figma
+    icon: <Cpu size={40} strokeWidth={1.8} />,
     title: 'Animal identification',
     desc: 'ICAR-certified microchips and RF ear tags.',
     bold: 'Why:',
@@ -60,7 +60,7 @@ const CARDS = [
     id: 'software',
     type: 't',
     theme: 'theme-soft',
-    icon: <Laptop size={36} strokeWidth={1.8} />,
+    icon: <Laptop size={40} strokeWidth={1.8} />,
     title: 'Animal management software',
     desc: 'Custom-built around your operation.',
     bold: 'Covers:',
@@ -69,8 +69,8 @@ const CARDS = [
   {
     id: 'farm-tech',
     type: 't',
-    theme: 'theme-green', // Deep green card from Figma!
-    icon: <Sprout size={36} strokeWidth={1.8} color="var(--lime)" />,
+    theme: 'theme-green', // Deep green card from Figma
+    icon: <Sprout size={40} strokeWidth={1.8} color="var(--lime)" />,
     title: 'Farm and livestock tech',
     desc: 'Modern tools for agriculture.',
     bold: 'From:',
@@ -80,7 +80,7 @@ const CARDS = [
     id: 'support',
     type: 't',
     theme: 'theme-soft',
-    icon: <Headphones size={36} strokeWidth={1.8} />,
+    icon: <Headphones size={40} strokeWidth={1.8} />,
     title: 'Setup and support',
     desc: 'We help you roll it out.',
     bold: 'Includes:',
@@ -100,7 +100,7 @@ export default function Catalog() {
   };
 
   return (
-    <section id="shop" style={{ padding: '20px 0 0' }}>
+    <section id="shop" style={{ padding: '24px 0 0' }}>
       <div className="wrap">
         <div className="what-we-do-container">
           {/* Header */}
@@ -157,7 +157,18 @@ export default function Catalog() {
                   className={`figma-card ${card.theme} ${isOpen ? 'open' : ''}`}
                   onClick={() => toggleCard(card.id)}
                 >
-                  <span className="figma-plus-btn">+</span>
+                  {/* Plus Icon Button - Explicitly visible & interactive */}
+                  <button
+                    type="button"
+                    className="figma-plus-btn"
+                    aria-label="Toggle card details"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleCard(card.id);
+                    }}
+                  >
+                    <Plus size={16} strokeWidth={2.6} />
+                  </button>
 
                   {card.type === 'p' ? (
                     <div className="figma-card-thumb">
@@ -182,7 +193,7 @@ export default function Catalog() {
           </div>
 
           {/* Fine text */}
-          <p style={{ fontSize: '12.5px', color: 'var(--mut)', marginTop: '32px' }}>
+          <p style={{ fontSize: '13px', color: 'var(--mut)', marginTop: '36px', lineHeight: 1.6 }}>
             Descriptions are informational and make no medical claims. Specifications and certificates available on request.
           </p>
         </div>

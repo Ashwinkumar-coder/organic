@@ -64,10 +64,10 @@ export default function Hero() {
           {/* Card 1: Wide Photo with Location Pill */}
           <div className="bento-photo-card">
             <img src="/images/hero-farmers.jpg" alt="Women farmers of Manipur in a turmeric field" />
-            <div className="bento-location-pill">
+            {/* <div className="bento-location-pill">
               <span style={{ color: '#e53e3e' }}>📍</span>
               <span>Manipur, India</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Card 2: Lime Curcumin Card */}

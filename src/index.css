@@ -9,7 +9,7 @@
   --green: #0b3d26;
   --accent-soft: #f3f4ee;
   --accent-lime-light: #eefac4;
-  --max-width: 1380px;
+  --max-width: 1420px;
   color-scheme: light;
   box-sizing: border-box;
 }
@@ -22,7 +22,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
   height: auto;
   background-color: var(--canvas);
 }
@@ -54,20 +54,20 @@ button {
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(20px, 4vw, 40px);
-  padding-right: clamp(20px, 4vw, 40px);
+  padding-left: clamp(16px, 4vw, 44px);
+  padding-right: clamp(16px, 4vw, 44px);
 }
 
 /* ==========================================================================
-   Header: Figma 3-Island Navigation
+   Header: Increased Size & Fully Responsive for All Devices
    ========================================================================== */
-header {
+header.header-root {
   position: sticky;
-  top: 18px;
+  top: 16px;
   z-index: 50;
   max-width: var(--max-width);
-  margin: 16px auto 0;
-  padding: 0 clamp(20px, 4vw, 40px);
+  margin: 14px auto 0;
+  padding: 0 clamp(16px, 4vw, 44px);
 }
 
 .header-inner {
@@ -77,39 +77,46 @@ header {
   gap: 16px;
 }
 
+/* Increased Logo Capsule */
 .nav-pill-logo {
   background: #ffffff;
-  padding: 10px 24px;
+  padding: 12px 28px;
   border-radius: 999px;
-  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-pill-logo:hover {
+  box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.14);
 }
 
 .nav-pill-logo img {
-  height: 32px;
+  height: 38px;
   width: auto;
   display: block;
 }
 
+/* Increased Navigation Links Capsule */
 .nav-pill-links {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 999px;
-  padding: 6px 16px;
+  padding: 8px 22px;
   display: flex;
   align-items: center;
-  gap: 4px;
-  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.04);
+  gap: 6px;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
 }
 
 .nav-pill-links a {
-  padding: 8px 18px;
+  padding: 10px 22px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--mut);
   transition: all 0.2s ease;
@@ -120,25 +127,98 @@ header {
   background: var(--soft);
 }
 
+/* Increased "Say hi" CTA Button */
 .nav-btn-sayhi {
   background: var(--green);
   color: #ffffff;
-  padding: 12px 28px;
+  padding: 14px 34px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 14px -4px rgba(11, 61, 38, 0.3);
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px -4px rgba(11, 61, 38, 0.35);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-btn-sayhi:hover {
   background: var(--ink);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -6px rgba(10, 10, 10, 0.4);
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--ink);
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-toggle:hover {
+  background: var(--soft);
+}
+
+/* Mobile Dropdown Drawer */
+.mobile-nav-drawer {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: clamp(16px, 4vw, 44px);
+  right: clamp(16px, 4vw, 44px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 28px;
+  border: 1.5px solid var(--ink);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.25);
+  z-index: 60;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  background: var(--accent-lime-light);
+}
+
+.mobile-sayhi-btn {
+  background: var(--green);
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 6px;
 }
 
 /* ==========================================================================
@@ -150,15 +230,14 @@ header {
   text-align: center;
 }
 
-/* Soft ambient green glow from Figma */
 .hero-glow {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(340px, 60vw, 800px);
+  width: clamp(340px, 60vw, 840px);
   height: clamp(300px, 45vw, 600px);
-  background: radial-gradient(ellipse at center, rgba(201, 245, 66, 0.3) 0%, rgba(201, 245, 66, 0.08) 45%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(201, 245, 66, 0.32) 0%, rgba(201, 245, 66, 0.08) 45%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -181,7 +260,7 @@ header {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 6px 16px;
+  padding: 7px 18px;
   border-radius: 999px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
@@ -200,7 +279,7 @@ header {
   line-height: 1.05;
   letter-spacing: -0.04em;
   font-weight: 700;
-  margin: 20px 0 0;
+  margin: 22px 0 0;
   color: var(--ink);
 }
 
@@ -209,7 +288,7 @@ header {
   display: inline-block;
   background: var(--green);
   color: var(--lime);
-  padding: 4px 28px 10px;
+  padding: 6px 32px 12px;
   border-radius: 999px;
   font-size: clamp(48px, 7vw, 96px);
   line-height: 1.05;
@@ -241,7 +320,7 @@ header {
   color: var(--ink);
   font-weight: 600;
   font-size: 15px;
-  padding: 13px 30px;
+  padding: 14px 32px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
@@ -261,7 +340,7 @@ header {
   color: var(--ink);
   font-weight: 600;
   font-size: 15px;
-  padding: 12px 28px;
+  padding: 13px 30px;
   border-radius: 999px;
   border: 1.5px solid var(--ink);
   cursor: pointer;
@@ -285,6 +364,7 @@ header {
   gap: 16px;
   margin-top: clamp(40px, 5vw, 64px);
   text-align: left;
+  width: 100%;
 }
 
 .bento-photo-card {
@@ -434,7 +514,7 @@ header {
 .what-we-do-container {
   background: #ffffff;
   border-radius: 40px;
-  padding: clamp(36px, 5vw, 64px) clamp(24px, 4vw, 56px);
+  padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 56px);
   margin-top: 48px;
   box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.05);
 }
@@ -459,7 +539,7 @@ header {
   display: inline-flex;
   background: var(--soft);
   border-radius: 999px;
-  padding: 5px;
+  padding: 6px;
   margin-top: 30px;
   gap: 4px;
 }
@@ -541,26 +621,48 @@ header {
   display: block;
 }
 
+/* ==========================================================================
+   Plus Icon: Explicitly Visible & Prominent on Every Card
+   ========================================================================== */
 .figma-plus-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 28px;
-  height: 28px;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   display: grid;
   place-items: center;
-  font-size: 15px;
-  font-weight: 600;
   color: var(--ink);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  z-index: 15;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+  padding: 0;
+}
+
+.figma-plus-btn:hover {
+  transform: scale(1.1);
+  background: var(--soft);
 }
 
 .figma-card.open .figma-plus-btn {
   transform: rotate(45deg);
+  background: var(--lime);
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.figma-card.theme-green .figma-plus-btn {
+  background: #ffffff;
+  color: var(--green);
+}
+
+.figma-card.theme-green.open .figma-plus-btn {
+  background: var(--lime);
+  color: var(--ink);
 }
 
 .figma-card-icon-box {
@@ -897,15 +999,21 @@ header {
 }
 
 /* ==========================================================================
-   Responsive
+   Full Responsive Adaptations for All Devices
    ========================================================================== */
 @media (max-width: 990px) {
+  .nav-pill-links {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: flex;
+  }
   .hero-bento-grid {
     grid-template-columns: 1fr;
   }
   .bento-photo-card {
     grid-row: auto;
-    min-height: 280px;
+    min-height: 300px;
   }
   .cards-grid-figma {
     grid-template-columns: 1fr 1fr;
@@ -935,7 +1043,17 @@ header {
   .origin-values-grid {
     grid-template-columns: 1fr;
   }
-  .nav-pill-links {
-    display: none;
+  .nav-pill-logo {
+    padding: 10px 20px;
+  }
+  .nav-pill-logo img {
+    height: 32px;
+  }
+  .nav-btn-sayhi {
+    padding: 11px 22px;
+    font-size: 14px;
+  }
+  .hero-smart-capsule {
+    padding: 4px 20px 8px;
   }
 }
