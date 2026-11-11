@@ -59,7 +59,7 @@ button {
 }
 
 /* ==========================================================================
-   Header: Increased Size & Fully Responsive for All Devices
+   Header: Wide White Navbar & Fully Responsive
    ========================================================================== */
 header.header-root {
   position: sticky;
@@ -70,50 +70,44 @@ header.header-root {
   padding: 0 clamp(16px, 4vw, 44px);
 }
 
-.header-inner {
+.navbar-wide-white {
+  background: #ffffff;
+  width: 100%;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.08);
+  padding: 10px 14px 10px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
+  transition: all 0.25s ease;
 }
 
-/* Increased Logo Capsule */
-.nav-pill-logo {
-  background: #ffffff;
-  padding: 12px 28px;
-  border-radius: 999px;
-  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+.navbar-wide-white:hover {
+  border-color: #cfd3c6;
+  box-shadow: 0 12px 36px -8px rgba(11, 61, 38, 0.14);
+}
+
+.navbar-brand-logo {
   display: flex;
   align-items: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
 }
 
-.nav-pill-logo:hover {
-  box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.14);
-}
-
-.nav-pill-logo img {
+.navbar-brand-logo img {
   height: 38px;
   width: auto;
   display: block;
 }
 
-/* Increased Navigation Links Capsule */
-.nav-pill-links {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 999px;
-  padding: 8px 22px;
+.navbar-desktop-nav {
   display: flex;
   align-items: center;
   gap: 6px;
-  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
 }
 
-.nav-pill-links a {
+.navbar-desktop-nav a {
   padding: 10px 22px;
   border-radius: 999px;
   font-size: 15px;
@@ -122,23 +116,23 @@ header.header-root {
   transition: all 0.2s ease;
 }
 
-.nav-pill-links a:hover {
+.navbar-desktop-nav a:hover {
   color: var(--ink);
   background: var(--soft);
 }
 
-/* Increased "Say hi" CTA Button */
+/* "Say hi" CTA Button */
 .nav-btn-sayhi {
   background: var(--green);
   color: #ffffff;
-  padding: 14px 34px;
+  padding: 13px 32px;
   border-radius: 999px;
   font-size: 15px;
   font-weight: 600;
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 6px 18px -4px rgba(11, 61, 38, 0.35);
+  box-shadow: 0 4px 16px -4px rgba(11, 61, 38, 0.3);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +143,7 @@ header.header-root {
 .nav-btn-sayhi:hover {
   background: var(--ink);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -6px rgba(10, 10, 10, 0.4);
+  box-shadow: 0 8px 22px -6px rgba(10, 10, 10, 0.35);
 }
 
 /* Mobile Hamburger Toggle */
@@ -1002,11 +996,14 @@ header.header-root {
    Full Responsive Adaptations for All Devices
    ========================================================================== */
 @media (max-width: 990px) {
-  .nav-pill-links {
+  .navbar-desktop-nav {
     display: none;
   }
   .mobile-nav-toggle {
     display: flex;
+  }
+  .navbar-wide-white {
+    padding: 8px 10px 8px 20px;
   }
   .hero-bento-grid {
     grid-template-columns: 1fr;
@@ -1043,14 +1040,11 @@ header.header-root {
   .origin-values-grid {
     grid-template-columns: 1fr;
   }
-  .nav-pill-logo {
-    padding: 10px 20px;
-  }
-  .nav-pill-logo img {
+  .navbar-brand-logo img {
     height: 32px;
   }
   .nav-btn-sayhi {
-    padding: 11px 22px;
+    padding: 10px 20px;
     font-size: 14px;
   }
   .hero-smart-capsule {

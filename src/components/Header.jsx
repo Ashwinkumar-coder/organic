@@ -6,38 +6,37 @@ export default function Header() {
 
   return (
     <header className="header-root">
-      <div className="header-inner">
-        {/* Left Pill: Brand Logo (Increased size) */}
-        <a href="#top" className="nav-pill-logo" aria-label="Indiorg Home">
+      <div className="navbar-wide-white">
+        {/* Left: Brand Logo */}
+        <a href="#top" className="navbar-brand-logo" aria-label="Indiorg Home">
           <img src="/images/logo.png" alt="Indiorg – Our earth our home" />
         </a>
 
-        {/* Center Pill: Desktop Navigation Links (Increased size) */}
-        <nav className="nav-pill-links">
+        {/* Center: Navigation Links */}
+        <nav className="navbar-desktop-nav">
           <a href="#shop">What we do</a>
           <a href="#origin">Origin</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        {/* Right Action: Say hi + Mobile Hamburger */}
+        {/* Right: CTA Button & Mobile Toggle */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <a href="#contact" className="nav-btn-sayhi">
             Say hi
           </a>
 
-          {/* Mobile Menu Button for small screens */}
           <button
             type="button"
             className="mobile-nav-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown for Tablets & Phones */}
+      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="mobile-nav-drawer">
           <a
