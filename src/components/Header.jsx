@@ -20,7 +20,7 @@ export default function Header() {
         </nav>
 
         {/* Right: CTA Button & Mobile Toggle */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div className="navbar-right-actions">
           <a href="#contact" className="nav-btn-sayhi">
             Say hi
           </a>
@@ -31,7 +31,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
