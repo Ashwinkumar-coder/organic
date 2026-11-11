@@ -10,17 +10,22 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <>
+    <div id="top" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
-      <main id="top">
+      <main style={{ flexGrow: 1 }}>
         <Hero />
         <Marquee />
         <Catalog />
         <Stats />
         <Origin />
-        <Contact />
+        {/* Deep Forest Green Contact + Footer Section from Figma */}
+        <div className="footer-contact-block">
+          <Contact />
+          <footer>
+            <Footer />
+          </footer>
+        </div>
       </main>
-      <Footer />
-    </>
+    </div>
   );
 }

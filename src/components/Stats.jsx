@@ -41,27 +41,30 @@ export default function Stats() {
   }, [started]);
 
   return (
-    <section style={{ paddingTop: 0 }} ref={ref}>
+    <section style={{ padding: '0 0 20px' }} ref={ref}>
       <div className="wrap">
-        <div className="stats">
-          <div className="stat">
-            <div className="num">
-              <span>{counts.n1}</span>
-              <em>%+</em>
+        <div className="stats-pill-container">
+          <div className="stats-pill-grid">
+            <div className="stats-col">
+              <div className="stats-number">
+                {counts.n1}%+
+              </div>
+              <div className="stats-label">Curcumin in our turmeric</div>
             </div>
-            <p>Curcumin in our turmeric</p>
-          </div>
-          <div className="stat">
-            <div className="num">
-              <span>{counts.n2}</span>
+
+            <div className="stats-col">
+              <div className="stats-number">
+                {counts.n2}
+              </div>
+              <div className="stats-label">Organic products from Manipur</div>
             </div>
-            <p>Organic products from Manipur</p>
-          </div>
-          <div className="stat">
-            <div className="num">
-              <span>{counts.n3}</span>
+
+            <div className="stats-col">
+              <div className="stats-number">
+                {counts.n3}
+              </div>
+              <div className="stats-label">Ways we back farms: produce and tech</div>
             </div>
-            <p>Ways we back farms: produce and tech</p>
           </div>
         </div>
       </div>

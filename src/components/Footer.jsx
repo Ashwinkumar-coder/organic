@@ -6,21 +6,21 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: 'var(--soft)' }}>
-      <div className="wrap">
-        <div
-          className="big"
-          style={{ width: '100%' }}
-          onClick={scrollToTop}
-          title="Back to top"
-        >
-          indiorg
-        </div>
+    <div className="wrap">
+      {/* Giant Outline Wordmark */}
+      <div
+        className="big-outline-indiorg"
+        onClick={scrollToTop}
+        title="Back to top"
+      >
+        indiorg
       </div>
-      <div className="wrap" style={{ marginTop: '34px' }}>
+
+      {/* Bottom Legal & Tagline */}
+      <div className="footer-bottom-line">
         <span>© 2026 Indiorg Agriculture Pvt. Ltd.</span>
         <span>Our earth, our home.</span>
       </div>
-    </footer>
+    </div>
   );
 }
