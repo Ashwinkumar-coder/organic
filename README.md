@@ -1,6 +1,6 @@
-# Indiorg – Organic Produce & Agri-Technology (React.js)
+# Indiorg – Organic Produce & Agri-Technology
 
-A modern, high-performance React application converted from the Indiorg single-page website. Built with React 19, Vite, and Lucide Icons, featuring an expanded layout width, modernized UI, and exact preservation of the brand's original color palette.
+A modern, high-performance React application converted from the Indiorg single-page website and redesigned to match the [Figma prototype](https://www.figma.com/proto/VWueENvR8yC1RCKKI7d30v/Annular-work).
 
 ---
 
@@ -8,47 +8,75 @@ A modern, high-performance React application converted from the Indiorg single-p
 
 | Variable | Hex Code | Usage |
 | :--- | :--- | :--- |
-| `--bg` | `#ffffff` | Page background & card fills |
-| `--ink` | `#0a0a0a` | Primary text, bold headers, dark buttons |
-| `--mut` | `#6d6d68` | Muted subtitles, secondary text |
-| `--line` | `#ebebe5` | Card borders, dividers, outlines |
-| `--soft` | `#f6f6f1` | Neutral soft backgrounds & tag chips |
-| `--lime` | `#c9f542` | Brand electric lime accent & primary button |
-| `--green` | `#0b3d26` | Deep forest green badges & typography accents |
-| `--accent-soft` | `#f3f4ee` | Segmented filter pill background |
-| `--accent-lime-light` | `#eefac4` | Tech card accent background |
+| `--bg` | `#ffffff` | Card containers, form inputs, badges |
+| `--canvas` | `#f7f7f2` | Soft ivory page canvas background |
+| `--ink` | `#0a0a0a` | Primary typography, dark buttons |
+| `--mut` | `#6d6d68` | Muted subtitles, descriptions, labels |
+| `--line` | `#ebebe5` | Card borders, dividers |
+| `--soft` | `#f6f6f1` | Form fields, tag pills, soft bento cards |
+| `--lime` | `#c9f542` | Hero capsule text, stat numbers, primary buttons |
+| `--green` | `#0b3d26` | Hero capsule, marquee, stats pill, contact block |
 
 ---
 
-## 🚀 Key Improvements & Upgrades
+## 🚀 Key Features & Implementation
 
-1. **Expanded Container Width**:
-   - Upgraded container max-width from `1180px` to **`1420px`**, providing an expansive, professional desktop viewport with balanced negative space.
+1. **Wide Solid White Navbar**:
+   - Single unified pill bar (`background: #ffffff; max-width: 1420px`) with subtle border and soft shadow.
+   - Houses the logo, desktop navigation links (`What we do`, `Origin`, `Contact`), and the green `Say hi` button.
+   - Fully responsive: includes a hamburger toggle and animated mobile drawer for tablets and phones (<990px).
 
-2. **Modular Component Architecture**:
-   - `Header.jsx`: Sticky glassmorphic navbar with logo, smooth-scroll links, mobile drawer, and CTA.
-   - `Hero.jsx`: Animated word rotator, pointer-tracked 3D tilt card, and floating badge stickers.
-   - `Marquee.jsx`: Seamless infinite marquee with pause-on-hover.
-   - `Catalog.jsx`: Segmented category filter tabs, responsive 4-column card grid, expandable drawers with detailed specifications, and plus/minus toggles.
-   - `Stats.jsx`: Live animated counters (`7%+`, `4`, `2`) triggered on viewport entry via `IntersectionObserver`.
-   - `Origin.jsx`: Storytelling two-column section with harvest photography, location pin badge, and four core value cards.
-   - `Contact.jsx`: Multi-select pill tag selector, controlled input fields, pre-filled `mailto:` generator, and submission confirmation.
-   - `Footer.jsx`: Statement typographic wordmark with hover color transition and back-to-top navigation.
+2. **Figma Hero Section**:
+   - Ambient green radial glow in the background.
+   - Status chip: `ORGANIC · SMART · SUSTAINABLE` with glowing green indicator dot.
+   - Bold title `Organic roots.` paired with the signature deep forest green capsule and electric lime text for `Smart tech.` (rotates through `Smart tech.`, `Animal ID.`, `Clean food.`, and `Real farmers.`).
+   - Action buttons: `Explore ↓` (lime with glow shadow) & `Get a quote` (white with dark outline).
 
-3. **High-Res Assets**:
-   - All 7 original images cleanly extracted from base64 into `/public/images/` for optimal caching and performance.
+3. **Hero Bento Grid (5 Cards)**:
+   - **Card 1**: Manipur turmeric farmers photo with bottom-left `📍 Manipur, India` pill badge.
+   - **Card 2**: Electric lime card with `7%+` and `Curcumin in our turmeric`.
+   - **Card 3**: Deep forest green card with `ICAR-certified microchips` and icon.
+   - **Card 4**: White card with indicator dot and `RF ear tags and animal software`.
+   - **Card 5**: White card with `Direct from tribal farmers. Fair, transparent, chemical-free.` and `Our story →`.
+
+4. **Deep Forest Green Marquee**:
+   - Full-width band in `#0b3d26` with alternating white and electric lime italic text with pause-on-hover.
+
+5. **"What We Do" Island Container**:
+   - 40px rounded white island container with segmented filter pill (`All`, `Produce`, `Tech`).
+   - 8 product & tech cards in a 4-column responsive grid:
+     - 4 Produce cards with 1:1 image frame and prominent `+` buttons.
+     - 4 Tech cards matching Figma themes:
+       - `Animal identification`: Electric lime card (`#c9f542`).
+       - `Animal management software`: Soft card with laptop icon.
+       - `Farm and livestock tech`: Deep forest green card (`#0b3d26`) with lime sprout icon.
+       - `Setup and support`: Soft card with headphones icon.
+     - Clickable `+` button that rotates smoothly to `×` upon expansion, revealing detailed specifications.
+
+6. **Stats Section (Deep Green Capsule)**:
+   - Rounded `#0b3d26` pill container with `7%+`, `4`, and `2` rendered in electric lime (`#c9f542`) across 3 divided columns, with animated count-up on scroll.
+
+7. **Origin Section ("Behind the Harvest")**:
+   - Rounded photo frame on the left.
+   - Right: Story and 2×2 grid of white rounded cards (*Premium quality*, *Sustainable*, *Farmer-first*, and *Transparent*).
+
+8. **Contact & Footer (Deep Forest Green Block)**:
+   - Full-width `#0b3d26` container with `48px` rounded top corners.
+   - Left: 3 glassmorphic contact pills with lime circular icons (Email, Phone, Visit).
+   - Right: Floating white form card with `Send an enquiry`, clickable interest tags, and lime `Send it →` submit button.
+   - Footer: Giant outlined `indiorg` wordmark in lime stroke (`-webkit-text-stroke: 1.8px var(--lime)`).
 
 ---
 
-## 🛠️ Getting Started
+## 🛠️ Development & Build Commands
 
-### Development Server
+### Start Development Server
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Accessible at [http://localhost:3000](http://localhost:3000).
 
-### Production Build
+### Build for Production
 ```bash
 npm run build
 ```
@@ -57,4 +85,3 @@ npm run build
 ```bash
 npm run preview
 ```
-
