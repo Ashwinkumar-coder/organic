@@ -1,10 +1,19 @@
 import React from 'react';
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer style={{ background: 'var(--soft)' }}>
       <div className="wrap">
-        <div className="big" style={{ width: '100%' }}>
+        <div
+          className="big"
+          style={{ width: '100%' }}
+          onClick={scrollToTop}
+          title="Back to top"
+        >
           indiorg
         </div>
       </div>

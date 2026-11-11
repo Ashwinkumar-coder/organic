@@ -33,7 +33,7 @@ export default function Stats() {
           }, 240);
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.3 }
     );
 
     if (ref.current) observer.observe(ref.current);
